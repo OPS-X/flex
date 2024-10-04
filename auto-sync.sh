@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Navigate to the project directory
-cd /path/to/your/local/flex
-
 # Check for any changes in the remote repository
 git pull origin main
 
