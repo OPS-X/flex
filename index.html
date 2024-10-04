@@ -51,33 +51,33 @@ const contentConfig = {
         tab1: {
             htmlPath: 'tab1_about.html',
             htmlTarget: '#over-ons',
-            cssPath: 'tab1_about_css.css',
-            jsPath: 'tab1_about_scr.js'
+            cssPath: 'tab1_about_css.html',
+            jsPath: 'tab1_about_scr.html'
         },
         tab2: {
-            htmlPath: 'tab2product.html',
+            htmlPath: 'tab2_product.html',
             htmlTarget: '#producten',
-            cssPath: 'tab2product.css',
-            jsPath: 'tab2product.js'
+            cssPath: 'tab2_product_css.html',
+            jsPath: 'tab2_product_scr.html'
+        },
+        tab3: {
+            htmlPath: 'tab3_contact.html',
+            htmlTarget: '#contact',
+            cssPath: 'tab3_contact_css.html',
+            jsPath: 'tab3_contact_scr.html'
         }
-        // tab3: {
-        //     htmlPath: 'tab3content.html',
-        //     htmlTarget: '#tab3-content',
-        //     cssPath: 'tab3styles.css',
-        //     jsPath: 'tab3script.js'
-        // },
         // tab4: {
-        //     htmlPath: 'tab4content.html',
-        //     htmlTarget: '#tab4-content',
-        //     cssPath: 'tab4styles.css',
-        //     jsPath: 'tab4script.js'
+        //     htmlPath: 'tab4_faq.html',
+        //     htmlTarget: '#faq',
+        //     cssPath: 'tab4_faq_css.html',
+        //     jsPath: 'tab4_faq_scr.html'
         // },
         // tab5: {
-        //     htmlPath: 'tab5content.html',
-        //     htmlTarget: '#tab5-content',
-        //     cssPath: 'tab5styles.css',
-        //     jsPath: 'tab5script.js'
-        // },
+        //     htmlPath: 'tab5_news.html',
+        //     htmlTarget: '#nieuws',
+        //     cssPath: 'tab5_news_css.html',
+        //     jsPath: 'tab5_news_scr.html'
+        // }
         // tab6: {
         //     htmlPath: 'tab6content.html',
         //     htmlTarget: '#tab6-content',
@@ -128,15 +128,12 @@ const contentConfig = {
     //         cssPath: 'sidebar.css',
     //         jsPath: 'sidebar.js'
     //     }
-     }
+      }
 };
-
-
 </script>
 
 <script id="file-include-scr">
-
-
+// Utility function to dynamically load content
 function loadContent(config) {
     const { htmlPath, htmlTarget, cssPath, jsPath } = config;
 
@@ -156,7 +153,15 @@ function loadContent(config) {
             .then(response => response.text())
             .then(data => {
                 const style = document.createElement('style');
-                style.textContent = data;
+                if (cssPath.endsWith('.html')) {
+                    // Extract CSS from HTML file
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = data;
+                    const styleTag = tempDiv.querySelector('style');
+                    style.textContent = styleTag ? styleTag.textContent : '';
+                } else {
+                    style.textContent = data;
+                }
                 document.head.appendChild(style);
             });
         promises.push(cssPromise);
@@ -167,7 +172,15 @@ function loadContent(config) {
             .then(response => response.text())
             .then(data => {
                 const script = document.createElement('script');
-                script.textContent = data;
+                if (jsPath.endsWith('.html')) {
+                    // Extract JS from HTML file
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = data;
+                    const scriptTag = tempDiv.querySelector('script');
+                    script.textContent = scriptTag ? scriptTag.textContent : '';
+                } else {
+                    script.textContent = data;
+                }
                 document.body.appendChild(script);
             });
         promises.push(jsPromise);
@@ -196,11 +209,9 @@ function loadConfiguredContent(config) {
 document.addEventListener('DOMContentLoaded', function() {
     loadConfiguredContent(contentConfig);
 });
-
 </script>
 
-
-<script id="smooth-collapse-scr" data-id="root-styling">
+<!-- <script id="smooth-collapse-scr" data-id="root-styling">
 function sectionCollapse(sectionId) {
   const allSections = document.getElementsByTagName('section');
 
@@ -232,7 +243,7 @@ function sectionCollapse(sectionId) {
     });
   }, 1000); // 1 second delay
 }
-</script>
+</script> -->
 
 <!-- OPSX ROOT CSS -->
 <style id="opsx-root-color-palette" data-id="root-styling">
@@ -968,193 +979,7 @@ align-items: center;
   flex-wrap: wrap;
 }
 
-/* Border width for all sides */
-.b1 {
-  border: 1px solid;
-}
 
-.b2 {
-  border: 2px solid;
-}
-
-.b4 {
-  border: 4px solid;
-}
-
-/* Individual border sides */
-.bt1 {
-  border-top: 1px solid;
-}
-
-.bt2 {
-  border-top: 2px solid;
-}
-
-.bt4 {
-  border-top: 4px solid;
-}
-
-.br1 {
-  border-right: 1px solid;
-}
-
-.br2 {
-  border-right: 2px solid;
-}
-
-.br4 {
-  border-right: 4px solid;
-}
-
-.bb1 {
-  border-bottom: 1px solid;
-}
-
-.bb2 {
-  border-bottom: 2px solid;
-}
-
-.bb4 {
-  border-bottom: 4px solid;
-}
-
-.bl1 {
-  border-left: 1px solid;
-}
-
-.bl2 {
-  border-left: 2px solid;
-}
-
-.bl4 {
-  border-left: 4px solid;
-}
-
-/* Border styles */
-.bs {
-  border-style: solid;
-}
-
-.bd {
-  border-style: dashed;
-}
-
-.bdo {
-  border-style: dotted;
-}
-
-.bri {
-  border-style: ridge;
-}
-
-/* Individual corner border radius */
-.btrra1 {
-  border-top-right-radius: 1px;
-}
-
-.btrra2 {
-  border-top-right-radius: 2px;
-}
-
-.btrra4 {
-  border-top-right-radius: 4px;
-}
-
-.btrra8 {
-  border-top-right-radius: 8px;
-}
-
-.bbrra1 {
-  border-bottom-right-radius: 1px;
-}
-
-.bbrra2 {
-  border-bottom-right-radius: 2px;
-}
-
-.bbrra4 {
-  border-bottom-right-radius: 4px;
-}
-
-.bbrra8 {
-  border-bottom-right-radius: 8px;
-}
-
-.bblra1 {
-  border-bottom-left-radius: 1px;
-}
-
-.bblra2 {
-  border-bottom-left-radius: 2px;
-}
-
-.bblra4 {
-  border-bottom-left-radius: 4px;
-}
-
-.bblra8 {
-  border-bottom-left-radius: 8px;
-}
-
-.btlra1 {
-  border-top-left-radius: 1px;
-}
-
-.btlra2 {
-  border-top-left-radius: 2px;
-}
-
-.btlra4 {
-  border-top-left-radius: 4px;
-}
-
-.btlra8 {
-  border-top-left-radius: 8px;
-}
-
-/* Border radius for all corners */
-.bra1 {
-  border-radius: 1px;
-}
-
-.bra2 {
-  border-radius: 2px;
-}
-
-.bra4 {
-  border-radius: 4px;
-}
-
-.bra8 {
-  border-radius: 8px;
-}
-
-/* Border colors */
-.bc-black {
-  border-color: black;
-}
-
-.bc-gray {
-  border-color: gray;
-}
-
-.bc-white {
-  border-color: white;
-}
-
-.bc-red {
-  border-color: red;
-}
-
-.bc-blue {
-  border-color: blue;
-}
-
-.bc-green {
-  border-color: green;
-}
-
-/* You can add more colors as needed */
 </style>
 
 <!-- ROOT TO REPLACE WITH OPSX ROOT -->
@@ -1480,101 +1305,7 @@ main {
 </style>
 
 
-<style id="tab4-contact" data-id="contact">
-div#tab3-container-wrap {
-  max-width: 400px;
-  align-self: center;
-  margin: auto;
-}
 
-.contact-form {
-  background-color: #1e1e1e;
-  border-radius: var(--border-radius);
-  max-width: 600px;
-  margin: 0 auto;
-  color: #fff;
-}
-
-.contact-form h2 {
-  color: #fff;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  color: #fff;
-  text-transform: uppercase;
-  font-style: italic;
-}
-
-.form-group input {
-  border: 1px solid #555;
-  border-radius: var(--border-radius);
-  background-color: #2b2b2b;
-  color: #fff;
-}
-
-.form-group textarea {
-  border: 1px solid #555;
-  border-radius: var(--border-radius);
-  background-color: #2b2b2b;
-  color: #fff;
-  height: 150px;
-}
-
-.form-group input:focus {
-  outline: none;
-  border-color: #4CAF50;
-}
-
-.form-group textarea:focus {
-  outline: none;
-  border-color: #4CAF50;
-}
-
-.submit-button {
-  background-color: #161816;
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Oswald';
-  transition: all 0.5s ease;
-}
-
-.submit-button:hover {
-  background-color: lightgrey;
-  color: black;
-}
-
-.form-message {
-  padding: 1rem;
-  border-radius: var(--border-radius);
-  margin-top: 1rem;
-  display: none;
-}
-
-.form-message--success {
-  background-color: #e6f7e6;
-  border-color: #c3e6cb;
-  color: #155724;
-}
-
-.form-message--error {
-  background-color: #f8d7da;
-  border-color: #f5c6cb;
-  color: #721c24;
-}
-</style>
 
 <style id="tab5-quote" data-id="quote">
 #quote p {
@@ -1977,33 +1708,7 @@ div#opsx-dynamic-font-loader-container {
 }
 </style>
 
-<style id="tab4-contact-media" data-id="contact">
-.contact-form {
-  position: relative;
-  z-index: 200;
-}
 
-@media (max-width: 768px) {
-  .contact-form {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-form {
-    padding: 10px;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    padding: 8px;
-  }
-
-  .submit-button {
-    padding: 0.5rem;
-  }
-}
-</style>
 
 <style id="tab6-partners-meida" data-id="partners">
 @media (max-width: 768px) {
@@ -2382,47 +2087,35 @@ h3 {
 
 
 <main class="main">
-  <section id="over-ons" class="tab-content active" tabindex="1" data-id="about">
 
+<section id="over-ons" class="tab-content active" tabindex="1" data-id="about">
+
+  <!-- ABOUT US -->
 
 </section>
 
-
 <section id="producten" class="tab-content collapse" tabindex="2" data-id="product">
 
-
+  <!-- PRODUCTS -->
 
 </section>
 
 <section id="contact" class="tab-content collapse x-flex col" tabindex="4" data-id="contact">
-  <div class="container-wrap w100 x-flex col" id="tab3-container-wrap">
-    <h2 class="section-title-2">CONTACT</h2>
-    <form id="contactForm" action="javascript:void(0);">
-      <div class="form-group">
-        <label for="name" data-content="CONTACT_FORM_NAME_LABEL"></label>
-        <input type="text" id="name" name="name" required="" class="p10 w100" />
-      </div>
-      <div class="form-group">
-        <label for="email" data-content="CONTACT_FORM_EMAIL_LABEL"></label>
-        <input type="email" id="email" name="email" required="" class="p10 w100" />
-      </div>
-      <div class="form-group">
-        <label for="message" data-content="CONTACT_FORM_MESSAGE_LABEL"></label>
-        <textarea id="message" name="message" required="" class="p10 w100"></textarea>
-      </div>
-      <button type="submit" class="submit-button w100" data-content="CONTACT_FORM_SUBMIT_BUTTON"></button>
-      <div id="formMessage" class="form-message"></div>
-    </form>
-  </div>
+
+<!-- CONTACT -->
+
 </section>
 
+
+
+
 <section id="quote" class="tab-content collapse" tabindex="5" data-id="quote">
-  <div class="container-wrap" id="tab5-container-wrap">
+  <!-- <div class="container-wrap" id="tab5-container-wrap">
     <h2 class="section-title-2">QUOTE</h2>
     <select style="width: 80px;" id="web_master_config_wem">
       <option value="--font-base">config</option>
     </select>
-  </div>
+  </div> -->
 
 </section>
 
@@ -3108,57 +2801,57 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-      // Initialize AOS
-      AOS.init({ duration: 1000, once: true, offset: 100 });
+<script id="aos_animations_scr">
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true, offset: 100 });
 
-      // Typewriter effect function
-      function typeWriter(element, text, speed = 30) {
-          let i = 0;
-          function type() {
-              if (i < text.length) {
-                  if (text.charAt(i) === '<') {
-                      let endIndex = text.indexOf('>', i);
-                      if (endIndex !== -1) {
-                          element.innerHTML += text.substring(i, endIndex + 1);
-                          i = endIndex + 1;
-                      }
-                  } else {
-                      element.innerHTML += text.charAt(i);
-                      i++;
-                  }
-                  setTimeout(type, speed);
-              }
-          }
-          type();
-      }
+    // Typewriter effect function
+    function typeWriter(element, text, speed = 30) {
+        let i = 0;
+        function type() {
+            if (i < text.length) {
+                if (text.charAt(i) === '<') {
+                    let endIndex = text.indexOf('>', i);
+                    if (endIndex !== -1) {
+                        element.innerHTML += text.substring(i, endIndex + 1);
+                        i = endIndex + 1;
+                    }
+                } else {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                }
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
 
-      // Apply typewriter effect to elements
-      const title = "Elevating Cannabis Cultivation to New Heights";
-      const content = "With FlexGrow, you're not just investing in containers; you're accessing a comprehensive ecosystem designed for unparalleled success in cannabis cultivation. Our integration of AI, blockchain, and cutting-edge agritech creates a symbiotic environment where your success is our success. Join us in redefining what's possible in cannabis cultivation, where data-driven insights meet unmatched industry expertise.";
+    // Apply typewriter effect to elements
+    const title = "Elevating Cannabis Cultivation to New Heights";
+    const content = "With FlexGrow, you're not just investing in containers; you're accessing a comprehensive ecosystem designed for unparalleled success in cannabis cultivation. Our integration of AI, blockchain, and cutting-edge agritech creates a symbiotic environment where your success is our success. Join us in redefining what's possible in cannabis cultivation, where data-driven insights meet unmatched industry expertise.";
 
-      const titleElement = document.querySelector('.vision-statement h3.typewriter');
-      const contentElement = document.querySelector('.vision-statement p.typewriter');
+    const titleElement = document.querySelector('.vision-statement h3.typewriter');
+    const contentElement = document.querySelector('.vision-statement p.typewriter');
 
-      // Start typewriter effect when elements are in view
-      const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                  if (entry.target === titleElement) {
-                      typeWriter(titleElement, title);
-                  } else if (entry.target === contentElement) {
-                      typeWriter(contentElement, content);
-                  }
-                  observer.unobserve(entry.target);
-              }
-          });
-      }, { threshold: 0.1 });
+    // Start typewriter effect when elements are in view
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target === titleElement) {
+                    typeWriter(titleElement, title);
+                } else if (entry.target === contentElement) {
+                    typeWriter(contentElement, content);
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
 
-      observer.observe(titleElement);
-      observer.observe(contentElement);
-  });
-  </script>
+    observer.observe(titleElement);
+    observer.observe(contentElement);
+});
+</script>
 
 
 <script id="hamburger-menu-script" data-id="header">
@@ -4377,7 +4070,170 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
 </script>
 
 
+<style id="opsx-root-border-util-classes">
+/* Border width for all sides */
+.b1 {
+  border: 1px solid;
+}
 
+.b2 {
+  border: 2px solid;
+}
+
+.b4 {
+  border: 4px solid;
+}
+
+/* Individual border sides */
+.bt1 {
+  border-top: 1px solid;
+}
+
+.bt2 {
+  border-top: 2px solid;
+}
+
+.bt4 {
+  border-top: 4px solid;
+}
+
+.br1 {
+  border-right: 1px solid;
+}
+
+.br2 {
+  border-right: 2px solid;
+}
+
+.br4 {
+  border-right: 4px solid;
+}
+
+.bb1 {
+  border-bottom: 1px solid;
+}
+
+.bb2 {
+  border-bottom: 2px solid;
+}
+
+.bb4 {
+  border-bottom: 4px solid;
+}
+
+.bl1 {
+  border-left: 1px solid;
+}
+
+.bl2 {
+  border-left: 2px solid;
+}
+
+.bl4 {
+  border-left: 4px solid;
+}
+
+/* Border styles */
+.bs {
+  border-style: solid;
+}
+
+.bd {
+  border-style: dashed;
+}
+
+.bdo {
+  border-style: dotted;
+}
+
+.bri {
+  border-style: ridge;
+}
+
+/* Individual corner border radius */
+.btrra1 {
+  border-top-right-radius: 1px;
+}
+
+.btrra2 {
+  border-top-right-radius: 2px;
+}
+
+.btrra4 {
+  border-top-right-radius: 4px;
+}
+
+.btrra8 {
+  border-top-right-radius: 8px;
+}
+
+.bbrra1 {
+  border-bottom-right-radius: 1px;
+}
+
+.bbrra2 {
+  border-bottom-right-radius: 2px;
+}
+
+.bbrra4 {
+  border-bottom-right-radius: 4px;
+}
+
+.bbrra8 {
+  border-bottom-right-radius: 8px;
+}
+
+.bblra1 {
+  border-bottom-left-radius: 1px;
+}
+
+.bblra2 {
+  border-bottom-left-radius: 2px;
+}
+
+.bblra4 {
+  border-bottom-left-radius: 4px;
+}
+
+.bblra8 {
+  border-bottom-left-radius: 8px;
+}
+
+.btlra1 {
+  border-top-left-radius: 1px;
+}
+
+.btlra2 {
+  border-top-left-radius: 2px;
+}
+
+.btlra4 {
+  border-top-left-radius: 4px;
+}
+
+.btlra8 {
+  border-top-left-radius: 8px;
+}
+
+/* Border radius for all corners */
+.bra1 {
+  border-radius: 1px;
+}
+
+.bra2 {
+  border-radius: 2px;
+}
+
+.bra4 {
+  border-radius: 4px;
+}
+
+.bra8 {
+  border-radius: 8px;
+}
+
+
+</style>
 
 
 </body>
