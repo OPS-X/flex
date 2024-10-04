@@ -1344,35 +1344,33 @@ div#opsx-dynamic-font-loader-container {
 
 <!-- RESPONSIVENESS-->
 
-
 <style id="header-media" data-id="header">
-  @media (max-width: 2000px) {
-    .navbar-toggler {
-      display: none;
-    }
-  
+@media (max-width: 2000px) {
+  .navbar-toggler {
+    display: none;
   }
-  
-  @media (max-width: 992px) {
-    .navbar-toggler {
-      display: block;
-  
-    }
-  
-    .navbar-menu {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .nav-logo {
-      display: none;
-  
-    }
-  
-  }
-  </style>
 
+}
+
+@media (max-width: 992px) {
+  .navbar-toggler {
+    display: block;
+
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-logo {
+    display: none;
+
+  }
+
+}
+</style>
 
 
 <style id="tab6-partners-meida" data-id="partners">
@@ -1639,116 +1637,116 @@ h3 {
 
 <body>
 
-  <header class="header" id="header_element" data-id="header_id">
+<header class="header" id="header_element" data-id="header_id">
 
-    <nav class="navbar p5 w100 x-flex spb centerv" id="header-nav-bar-container">
-    
-      <div class="navbar-container x-flex spb w100 centerv">
-    
-        <!-- Logo -->
-        <a href="/" class="navbar-logo">
-          <img src="https://storage.googleapis.com/ops_x/libraries/projects/flexgrow/Assets/Logo/LogoOnlyVectorized.svg" alt="Flexgrow Logo" />
-        </a>
-    
-        <div class="language-flags g20 x-flex centerv">
-          <!-- Dutch Flag -->
-          <button class="flag-button x-flex centerv" data-lang="nl">
-            <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
-              <path fill="#21468b" d="M0 0h640v480H0z" />
-              <path fill="#fff" d="M0 0h640v320H0z" />
-              <path fill="#ae1c28" d="M0 0h640v160H0z" />
-            </svg>
-          </button>
-    
-          <!-- English Flag -->
-          <button class="flag-button x-flex centerv" data-lang="en">
-            <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
-              <path fill="#012169" d="M0 0h640v480H0z" />
-              <path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" />
-              <path fill="#C8102E" d="M424 281l216 159v40L369 281h55zm-184 20l6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z" />
-              <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
-              <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z" />
-            </svg>
-          </button>
-    
-          <!-- Flex-G Avatar (now clickable) -->
-          <a href="#Flex-G" class="Flex-G-avatar-link" onclick="switchTab('Flex-G'); playBob(); showFlexGMessage();">
-            <img src="https://storage.googleapis.com/ops_x/libraries/stockart/avatars/ai_models/jpg/avatar_chatTHC.webp" alt="Flex-G Avatar" class="Flex-G-avatar">
-          </a>
-    
-          <!-- German Flag -->
-          <button class="flag-button x-flex centerv" data-lang="de">
-            <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
-              <path fill="#000000" d="M0 0h640v160H0z" />
-              <path fill="#d00" d="M0 160h640v160H0z" />
-              <path fill="#ffce00" d="M0 320h640v160H0z" />
-            </svg>
-          </button>
-    
-          <!-- Spanish Flag -->
-          <button class="flag-button x-flex centerv" data-lang="es">
-            <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
-              <path fill="#AA151B" d="M0 0h640v120H0z" />
-              <path fill="#F1BF00" d="M0 120h640v240H0z" />
-              <path fill="#AA151B" d="M0 360h640v120H0z" />
-              <g transform="translate(320, 240) scale(0.5)">
-              </g>
-            </svg>
-          </button>
-        </div>
-    
-    
-        <!-- Hamburger Menu Icon -->
-        <button class="menu-trigger navbar-toggler" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
-          <!-- Original Hamburger SVG -->
-          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 7H26V9H4V7Z" fill="currentColor" />
-            <path d="M4 14H26V16H4V14Z" fill="currentColor" />
-            <path d="M4 21H26V23H4V21Z" fill="currentColor" />
-          </svg>
-        </button>
-    
-    
-        <!-- Navigation Links -->
-        <ul class="navbar-menu x-flex">
-          <li class="nav-item"><a href="#producten" class="nav-link p5" onclick="switchTab('producten')" data-content="MENU_ITEM_1">Products</a></li>
-          <li class="nav-item"><a href="#licence" class="nav-link p5" onclick="switchTab('licence')" data-content="MENU_ITEM_2">Licence</a></li>
-          <li class="nav-item"><a href="#partners" class="nav-link p5" onclick="switchTab('partners')" data-content="MENU_ITEM_3">Partners</a></li>
-          <li class="nav-item"><a href="#Flex-G" class="nav-link p5" onclick="switchTab('Flex-G'); showFlexGMessage();">Flex-G</a></li> <!-- data-content="MENU_ITEM_7" -->
-          <li class="nav-item"><a href="#over-ons" class="nav-link p5" onclick="switchTab('over-ons')" data-content="MENU_ITEM_4">About us</a></li>
-          <li class="nav-item"><a href="#contact" class="nav-link p5" onclick="switchTab('contact')">Contact</a></li> <!-- data-content="MENU_ITEM_5" -->
-          <li class="nav-item"><a href="#quote" class="nav-link p5" onclick="switchTab('quote')">Quote</a></li> <!-- data-content="MENU_ITEM_6" -->
-          <li class="nav-item"><a href="#x-tractor" class="nav-link p5" onclick="switchTab('x-tractor')">X Tractor</a></li> <!-- data-content="MENU_ITEM_8" -->
-    
-        </ul>
-      </div>
-    </nav>
-    
-    
-    <div id="menu-overlay" class="menu-overlay w100"></div>
-    
-    <div id="mobile-menu" class="mobile-menu w100 x-flex centerh centerv">
-    
-      <button id="menu-close" class="menu-close-button" aria-label="Close navigation">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path d="M6 6L18 18" stroke="white" stroke-width="2" />
-          <path d="M6 18L18 6" stroke="white" stroke-width="2" />
+<nav class="navbar p5 w100 x-flex spb centerv" id="header-nav-bar-container">
+
+  <div class="navbar-container x-flex spb w100 centerv">
+
+    <!-- Logo -->
+    <a href="/" class="navbar-logo">
+      <img src="https://storage.googleapis.com/ops_x/libraries/projects/flexgrow/Assets/Logo/LogoOnlyVectorized.svg" alt="Flexgrow Logo" />
+    </a>
+
+    <div class="language-flags g20 x-flex centerv">
+      <!-- Dutch Flag -->
+      <button class="flag-button x-flex centerv" data-lang="nl">
+        <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
+          <path fill="#21468b" d="M0 0h640v480H0z" />
+          <path fill="#fff" d="M0 0h640v320H0z" />
+          <path fill="#ae1c28" d="M0 0h640v160H0z" />
         </svg>
       </button>
-    
-      <ul class="mobile-menu-list g20 x-flex col">
-        <li class="mobile-nav-item"><a href="#producten" class="mobile-nav-link" onclick="switchTab('producten')" data-content="MENU_ITEM_1">Products</a></li>
-        <li class="mobile-nav-item"><a href="#licence" class="mobile-nav-link" onclick="switchTab('licence')" data-content="MENU_ITEM_2">Grower Licence</a></li>
-        <li class="mobile-nav-item"><a href="#partners" class="mobile-nav-link" onclick="switchTab('partners')" data-content="MENU_ITEM_3">Partners</a></li>
-        <li class="mobile-nav-item"><a href="#Flex-G" class="mobile-nav-link" onclick="switchTab('Flex-G'); showFlexGMessage();">Flex-G</a></li> <!-- data-content="MENU_ITEM_7" -->
-        <li class="mobile-nav-item"><a href="#over-ons" class="mobile-nav-link" onclick="switchTab('over-ons')" data-content="MENU_ITEM_4">About us</a></li>
-        <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link" onclick="switchTab('contact')">Contact</a></li><!-- data-content="MENU_ITEM_5" -->
-        <li class="mobile-nav-item"><a style="color: gold" href="#quote" class="mobile-nav-link" onclick="switchTab('quote')">Quote</a></li><!-- data-content="MENU_ITEM_6" -->
-        <li class="mobile-nav-item none"><a href="#x-tractor" class="mobile-nav-link" onclick="switchTab('x-tractor')">X Tractor</a></li> <!-- data-content="MENU_ITEM_7" -->
-        
-      </ul>
+
+      <!-- English Flag -->
+      <button class="flag-button x-flex centerv" data-lang="en">
+        <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
+          <path fill="#012169" d="M0 0h640v480H0z" />
+          <path fill="#FFF" d="M75 0l244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z" />
+          <path fill="#C8102E" d="M424 281l216 159v40L369 281h55zm-184 20l6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z" />
+          <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z" />
+          <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z" />
+        </svg>
+      </button>
+
+      <!-- Flex-G Avatar (now clickable) -->
+      <a href="#Flex-G" class="Flex-G-avatar-link" onclick="switchTab('Flex-G'); playBob(); showFlexGMessage();">
+        <img src="https://storage.googleapis.com/ops_x/libraries/stockart/avatars/ai_models/jpg/avatar_chatTHC.webp" alt="Flex-G Avatar" class="Flex-G-avatar">
+      </a>
+
+      <!-- German Flag -->
+      <button class="flag-button x-flex centerv" data-lang="de">
+        <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
+          <path fill="#000000" d="M0 0h640v160H0z" />
+          <path fill="#d00" d="M0 160h640v160H0z" />
+          <path fill="#ffce00" d="M0 320h640v160H0z" />
+        </svg>
+      </button>
+
+      <!-- Spanish Flag -->
+      <button class="flag-button x-flex centerv" data-lang="es">
+        <svg xmlns="http://www.w3.org/2000/svg" class="flag-icon w100" viewBox="0 0 640 480">
+          <path fill="#AA151B" d="M0 0h640v120H0z" />
+          <path fill="#F1BF00" d="M0 120h640v240H0z" />
+          <path fill="#AA151B" d="M0 360h640v120H0z" />
+          <g transform="translate(320, 240) scale(0.5)">
+          </g>
+        </svg>
+      </button>
     </div>
-    </header>
+
+
+    <!-- Hamburger Menu Icon -->
+    <button class="menu-trigger navbar-toggler" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+      <!-- Original Hamburger SVG -->
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 7H26V9H4V7Z" fill="currentColor" />
+        <path d="M4 14H26V16H4V14Z" fill="currentColor" />
+        <path d="M4 21H26V23H4V21Z" fill="currentColor" />
+      </svg>
+    </button>
+
+
+    <!-- Navigation Links -->
+    <ul class="navbar-menu x-flex">
+      <li class="nav-item"><a href="#producten" class="nav-link p5" onclick="switchTab('producten')" data-content="MENU_ITEM_1">Products</a></li>
+      <li class="nav-item"><a href="#licence" class="nav-link p5" onclick="switchTab('licence')" data-content="MENU_ITEM_2">Licence</a></li>
+      <li class="nav-item"><a href="#partners" class="nav-link p5" onclick="switchTab('partners')" data-content="MENU_ITEM_3">Partners</a></li>
+      <li class="nav-item"><a href="#Flex-G" class="nav-link p5" onclick="switchTab('Flex-G'); showFlexGMessage();">Flex-G</a></li> <!-- data-content="MENU_ITEM_7" -->
+      <li class="nav-item"><a href="#over-ons" class="nav-link p5" onclick="switchTab('over-ons')" data-content="MENU_ITEM_4">About us</a></li>
+      <li class="nav-item"><a href="#contact" class="nav-link p5" onclick="switchTab('contact')">Contact</a></li> <!-- data-content="MENU_ITEM_5" -->
+      <li class="nav-item"><a href="#quote" class="nav-link p5" onclick="switchTab('quote')">Quote</a></li> <!-- data-content="MENU_ITEM_6" -->
+      <li class="nav-item"><a href="#x-tractor" class="nav-link p5" onclick="switchTab('x-tractor')">X Tractor</a></li> <!-- data-content="MENU_ITEM_8" -->
+
+    </ul>
+  </div>
+</nav>
+
+
+<div id="menu-overlay" class="menu-overlay w100"></div>
+
+<div id="mobile-menu" class="mobile-menu w100 x-flex centerh centerv">
+
+  <button id="menu-close" class="menu-close-button" aria-label="Close navigation">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M6 6L18 18" stroke="white" stroke-width="2" />
+      <path d="M6 18L18 6" stroke="white" stroke-width="2" />
+    </svg>
+  </button>
+
+  <ul class="mobile-menu-list g20 x-flex col">
+    <li class="mobile-nav-item"><a href="#producten" class="mobile-nav-link" onclick="switchTab('producten')" data-content="MENU_ITEM_1">Products</a></li>
+    <li class="mobile-nav-item"><a href="#licence" class="mobile-nav-link" onclick="switchTab('licence')" data-content="MENU_ITEM_2">Grower Licence</a></li>
+    <li class="mobile-nav-item"><a href="#partners" class="mobile-nav-link" onclick="switchTab('partners')" data-content="MENU_ITEM_3">Partners</a></li>
+    <li class="mobile-nav-item"><a href="#Flex-G" class="mobile-nav-link" onclick="switchTab('Flex-G'); showFlexGMessage();">Flex-G</a></li> <!-- data-content="MENU_ITEM_7" -->
+    <li class="mobile-nav-item"><a href="#over-ons" class="mobile-nav-link" onclick="switchTab('over-ons')" data-content="MENU_ITEM_4">About us</a></li>
+    <li class="mobile-nav-item"><a href="#contact" class="mobile-nav-link" onclick="switchTab('contact')">Contact</a></li><!-- data-content="MENU_ITEM_5" -->
+    <li class="mobile-nav-item"><a style="color: gold" href="#quote" class="mobile-nav-link" onclick="switchTab('quote')">Quote</a></li><!-- data-content="MENU_ITEM_6" -->
+    <li class="mobile-nav-item none"><a href="#x-tractor" class="mobile-nav-link" onclick="switchTab('x-tractor')">X Tractor</a></li> <!-- data-content="MENU_ITEM_7" -->
+    
+  </ul>
+</div>
+</header>
 
 
 <main class="main">
