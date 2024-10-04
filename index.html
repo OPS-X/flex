@@ -3742,47 +3742,38 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
 <style id="tab1-about-us" data-id="about">
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
   
+  /* Base styles */
   #tab4-container-wrap {
     display: flex;
     flex-direction: column;
     flex: 1;
     height: 100%;
     margin: auto;
-  }
-  
-  #over-ons {
+    padding: 10px;
     background-color: #000;
     color: #e0e0e0;
     font-family: var(--font-base);
-    position: relative;
-    overflow: visible;
-    height: 100%;
-    z-index: 1;
-    overflow-x: clip;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
   }
   
-  #over-ons .strategy-container {
+  .strategy-container {
     display: flex;
     flex-direction: column;
     height: 100%;
     flex: 1;
     gap: 15px;
     max-width: 1200px;
-    z-index: 2;
+    margin: 0 auto;
   }
   
-  #over-ons .title-container {
+  /* Title styles */
+  .title-container {
     text-align: center;
     position: relative;
   }
   
-  #over-ons .section-title {
+  .section-title {
     font-size: var(--title-font-size);
     color: #fff;
-    text-align: center;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -3790,9 +3781,10 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 0;
+    position: relative;
   }
   
-  #over-ons .section-title::after {
+  .section-title::after {
     content: '';
     position: absolute;
     bottom: -10px;
@@ -3802,7 +3794,7 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     background: linear-gradient(90deg, transparent, #4CAF50, transparent);
   }
   
-  #over-ons .section-subtitle {
+  .section-subtitle {
     color: #aee0b0;
     font-weight: 400;
     text-transform: uppercase;
@@ -3811,34 +3803,27 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     font-size: var(--title-sub-font-size);
   }
   
-  #over-ons .strategy-Flex-G {
+  /* Strategy intro styles */
+  .strategy-intro {
     text-align: center;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
   
-  #over-ons .strategy-intro p {
+  .strategy-intro p {
     text-align: justify;
     text-transform: uppercase;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
   }
   
-  #over-ons .timeline-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-  }
-  
-  #over-ons .timeline {
+  /* Timeline styles */
+  .timeline {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
   }
   
-  #over-ons .timeline::after {
+  .timeline::after {
     content: '';
     position: absolute;
     width: 6px;
@@ -3851,19 +3836,18 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     z-index: -1;
   }
   
-  #over-ons .timeline-item {
+  .timeline-item {
     position: relative;
     background-color: inherit;
     width: 50%;
     margin-bottom: 20px;
   }
   
-  #over-ons .timeline-item::after {
+  .timeline-item::after {
     content: '';
     position: absolute;
     width: 15px;
     height: 15px;
-    right: -8px;
     background-color: #4CAF50;
     border: 4px solid #8BC34A;
     top: 15px;
@@ -3872,15 +3856,15 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     box-shadow: 0 0 15px #4CAF50;
   }
   
-  #over-ons .left {
+  .timeline-item.left {
     left: 0;
   }
   
-  #over-ons .right {
+  .timeline-item.right {
     left: 50%;
   }
   
-  #over-ons .left::before {
+  .timeline-item.left::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -3893,7 +3877,7 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     border-color: transparent transparent transparent #4CAF50;
   }
   
-  #over-ons .right::before {
+  .timeline-item.right::before {
     content: " ";
     height: 0;
     position: absolute;
@@ -3906,11 +3890,15 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     border-color: transparent #4CAF50 transparent transparent;
   }
   
-  #over-ons .right::after {
+  .timeline-item.left::after {
+    right: -8px;
+  }
+  
+  .timeline-item.right::after {
     left: -8px;
   }
   
-  #over-ons .timeline-content {
+  .timeline-content {
     padding: 20px 30px;
     background-color: rgba(255, 255, 255, 0.05);
     position: relative;
@@ -3921,39 +3909,40 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     margin: 20px;
   }
   
-  #over-ons .timeline-content:hover {
+  .timeline-content:hover {
     transform: scale(1.05);
     box-shadow: 0 0 30px rgba(76, 175, 80, 0.3);
   }
   
-  #over-ons .pillar {
+  /* Pillar styles */
+  .pillar {
     background: transparent;
     border-radius: 10px;
     overflow: hidden;
   }
   
-  #over-ons .pillar-image {
+  .pillar-image {
     height: 200px;
     overflow: hidden;
   }
   
-  #over-ons .pillar-image img {
+  .pillar-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
   }
   
-  #over-ons .timeline-content:hover .pillar-image img {
+  .timeline-content:hover .pillar-image img {
     transform: scale(1.1);
   }
   
-  #over-ons .pillar-content {
+  .pillar-content {
     display: flex;
     flex-direction: column;
   }
   
-  #over-ons .pillar h3 {
+  .pillar h3 {
     color: #fff;
     margin-bottom: 1rem;
     position: relative;
@@ -3963,7 +3952,7 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     letter-spacing: 0.5px;
   }
   
-  #over-ons .pillar h3::after {
+  .pillar h3::after {
     content: '';
     position: absolute;
     left: 0;
@@ -3973,12 +3962,12 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     background: linear-gradient(to right, #4CAF50, #8BC34A);
   }
   
-  #over-ons .pillar p {
+  .pillar p {
     line-height: 1.6;
     text-align: justify;
   }
   
-  #over-ons .learn-more {
+  .learn-more {
     background: linear-gradient(to right, #374138, #777777);
     color: #fff;
     border: none;
@@ -3987,12 +3976,13 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     transition: all 0.3s ease;
   }
   
-  #over-ons .learn-more:hover {
+  .learn-more:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
   }
   
-  #over-ons .vision-statement {
+  /* Vision statement styles */
+  .vision-statement {
     background: linear-gradient(45deg, rgba(76, 175, 80, 0.1) 0%, rgba(139, 195, 74, 0.1) 100%);
     padding: 2rem;
     border-radius: 10px;
@@ -4003,12 +3993,12 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     font-size: large;
   }
   
-  #over-ons .vision-statement:hover {
+  .vision-statement:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(76, 175, 80, 0.2);
   }
   
-  #over-ons .vision-statement h3 {
+  .vision-statement h3 {
     color: #fff;
     position: relative;
     display: inline-block;
@@ -4017,7 +4007,7 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     letter-spacing: 0.5px;
   }
   
-  #over-ons .vision-statement h3::after {
+  .vision-statement h3::after {
     content: '';
     position: absolute;
     left: 0;
@@ -4027,95 +4017,68 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
     background: linear-gradient(to right, #4CAF50, #8BC34A);
   }
   
-  #over-ons .vision-statement p {
+  .vision-statement p {
     line-height: 1.6;
-  }
-  
-  #over-ons .timeline-nav div {
-    width: 72px;
-    font-weight: bold;
-    font-family: roboto;
-    align-items: center;
-    display: flex;
   }
   </style>
   
   <style id="tab1-about-us-media" data-id="about">
-    @media screen and (max-width: 600px) {
-      #over-ons .timeline-nav {
-        overflow-x: auto;
-        justify-content: space-evenly;
-        padding-bottom: 15px;
-        gap: 25px;
-        width: 100%;
-      }
-    
-      #over-ons .timeline::after {
-        left: 15px;
-      }
-    
-      #over-ons .timeline-item {
-        width: 100%;
-        padding-left: 40px;
-        padding-right: 15px;
-      }
-    
-      #over-ons .timeline-content {
-        margin: 10px 20px 10px 0px;
-        padding: 10px;
-      }
-    
-      #over-ons .timeline-item::before {
-        left: 15px;
-        border-width: 10px 10px 10px 0;
-        border-color: transparent #4CAF50 transparent transparent;
-      }
-    
-      #over-ons .timeline-item::after {
-        left: 8px;
-      }
-    
-      #over-ons .left::after,
-      #over-ons .right::after {
-        left: 8px;
-      }
-    
-      #over-ons .right,
-      #over-ons .left {
-        left: -5px;
-      }
-    
-      #over-ons .pillar-image {
-        height: 150px;
-      }
-    
-      #over-ons .learn-more {
-        padding: 8px 16px;
-      }
+  @media screen and (max-width: 600px) {
+    .timeline::after {
+      left: 15px;
     }
-    
-    @media screen and (max-width: 480px) {
-      #over-ons .timeline-content {
-        padding: 10px;
-        width: 100%;
-        margin: 0;
-      }
-    
-      #over-ons .timeline-item {
-        width: 100%;
-        padding-left: 40px;
-        padding-right: 0;
-      }
-    
-      #over-ons .strategy-container {
-        padding: 0;
-      }
-    
-      #over-ons .timeline-nav {
-        display: none;
-      }
+  
+    .timeline-item {
+      width: 100%;
+      padding-left: 40px;
+      padding-right: 15px;
     }
-    </style>
+  
+    .timeline-item.left,
+    .timeline-item.right {
+      left: 0;
+    }
+  
+    .timeline-item::before {
+      left: 15px;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #4CAF50 transparent transparent;
+    }
+  
+    .timeline-item::after {
+      left: 8px;
+    }
+  
+    .timeline-content {
+      margin: 10px 0;
+      padding: 10px;
+    }
+  
+    .pillar-image {
+      height: 150px;
+    }
+  
+    .learn-more {
+      padding: 8px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .timeline-content {
+      padding: 10px;
+      width: 100%;
+      margin: 0;
+    }
+  
+    .timeline-item {
+      padding-right: 0;
+    }
+  
+    .strategy-container {
+      padding: 0;
+    }
+  }
+  </style>
   
 
 </body>
