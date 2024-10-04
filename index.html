@@ -243,6 +243,7 @@ const contentConfig = {
 
 <script id="file-include-scr">
 // Utility function to dynamically load content
+
 function loadContent(config) {
     const { htmlPath, htmlTarget, cssPath, jsPath } = config;
 
@@ -298,12 +299,11 @@ function loadContent(config) {
     return Promise.all(promises);
 }
 
-
 // Function to load content based on the configuration
 function loadConfiguredContent(config) {
     for (const [section, sectionConfig] of Object.entries(config)) {
         if (typeof sectionConfig === 'object' && !Array.isArray(sectionConfig)) {
-            if ('htmlPath' in sectionConfig) {
+            if ('jsPath' in sectionConfig || 'htmlPath' in sectionConfig || 'cssPath' in sectionConfig) {
                 // If it's a direct configuration object, load it
                 loadContent(sectionConfig);
             } else {
