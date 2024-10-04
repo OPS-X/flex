@@ -3738,7 +3738,82 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
 .centerh { justify-content: center; } .centerv { align-items: center; } .row { flex-direction: row; } .wrap { flex-wrap: wrap; }
 
 </style>
-
+<style id="tab1-about-us-media" data-id="about">
+  @media screen and (max-width: 600px) {
+    #over-ons .timeline-nav {
+      overflow-x: auto;
+      justify-content: space-evenly;
+      padding-bottom: 15px;
+      gap: 25px;
+      width: 100%;
+    }
+  
+    #over-ons .timeline::after {
+      left: 15px;
+    }
+  
+    #over-ons .timeline-item {
+      width: 100%;
+      padding-left: 40px;
+      padding-right: 15px;
+    }
+  
+    #over-ons .timeline-content {
+      margin: 10px 20px 10px 0px;
+      padding: 10px;
+    }
+  
+    #over-ons .timeline-item::before {
+      left: 15px;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #4CAF50 transparent transparent;
+    }
+  
+    #over-ons .timeline-item::after {
+      left: 8px;
+    }
+  
+    #over-ons .left::after,
+    #over-ons .right::after {
+      left: 8px;
+    }
+  
+    #over-ons .right,
+    #over-ons .left {
+      left: -5px;
+    }
+  
+    #over-ons .pillar-image {
+      height: 150px;
+    }
+  
+    #over-ons .learn-more {
+      padding: 8px 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    #over-ons .timeline-content {
+      padding: 10px;
+      width: 100%;
+      margin: 0;
+    }
+  
+    #over-ons .timeline-item {
+      width: 100%;
+      padding-left: 40px;
+      padding-right: 0;
+    }
+  
+    #over-ons .strategy-container {
+      padding: 0;
+    }
+  
+    #over-ons .timeline-nav {
+      display: none;
+    }
+  }
+  </style>
 
 <style id="tab1-about-us" data-id="about">
   @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
@@ -4041,82 +4116,7 @@ Me memory might be as hazy as Blue Mountain mist, but me wisdom runs deep like r
   }
   </style>
   
-  <style id="tab1-about-us-media" data-id="about">
-  @media screen and (max-width: 600px) {
-    #over-ons .timeline-nav {
-      overflow-x: auto;
-      justify-content: space-evenly;
-      padding-bottom: 15px;
-      gap: 25px;
-      width: 100%;
-    }
-  
-    #over-ons .timeline::after {
-      left: 15px;
-    }
-  
-    #over-ons .timeline-item {
-      width: 100%;
-      padding-left: 40px;
-      padding-right: 15px;
-    }
-  
-    #over-ons .timeline-content {
-      margin: 10px 20px 10px 0px;
-      padding: 10px;
-    }
-  
-    #over-ons .timeline-item::before {
-      left: 15px;
-      border-width: 10px 10px 10px 0;
-      border-color: transparent #4CAF50 transparent transparent;
-    }
-  
-    #over-ons .timeline-item::after {
-      left: 8px;
-    }
-  
-    #over-ons .left::after,
-    #over-ons .right::after {
-      left: 8px;
-    }
-  
-    #over-ons .right,
-    #over-ons .left {
-      left: -5px;
-    }
-  
-    #over-ons .pillar-image {
-      height: 150px;
-    }
-  
-    #over-ons .learn-more {
-      padding: 8px 16px;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    #over-ons .timeline-content {
-      padding: 10px;
-      width: 100%;
-      margin: 0;
-    }
-  
-    #over-ons .timeline-item {
-      width: 100%;
-      padding-left: 40px;
-      padding-right: 0;
-    }
-  
-    #over-ons .strategy-container {
-      padding: 0;
-    }
-  
-    #over-ons .timeline-nav {
-      display: none;
-    }
-  }
-  </style>
+
 
 </body>
 
