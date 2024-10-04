@@ -128,7 +128,7 @@ const contentConfig = {
     //         cssPath: 'sidebar.css',
     //         jsPath: 'sidebar.js'
     //     }
-    // }
+     }
 };
 
 // Function to load content based on the configuration
@@ -151,17 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadConfiguredContent(contentConfig);
 });
 
-</script>
-
-<script id="tab2-product-include-scr">
-document.addEventListener('DOMContentLoaded', function() {
-  fetch('tab2product.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('producten').innerHTML = data;
-    })
-    .catch(error => console.error('Error loading tab2product.html:', error));
-});
 </script>
 
 
