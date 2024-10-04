@@ -211,40 +211,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- <script id="smooth-collapse-scr" data-id="root-styling">
-function sectionCollapse(sectionId) {
-  const allSections = document.getElementsByTagName('section');
-
-  // Immediate actions
-  Array.from(allSections).forEach(section => {
-    if (section.id !== sectionId) {
-      // Sections to collapse
-      if (!section.classList.contains('collapse')) {
-        section.classList.remove('uncollapse');
-        section.classList.add('collapse');
-      }
-    }
-  });
-
-  // Delayed actions (after 1 second)
-  setTimeout(() => {
-    Array.from(allSections).forEach(section => {
-      if (section.id === sectionId) {
-        // Section to uncollapse
-        section.style.display = ''; // Make it visible
-        section.classList.remove('collapse');
-        section.classList.add('uncollapse');
-      } else {
-        // Other sections
-        if (section.style.display !== 'none') {
-          section.style.display = 'none';
-        }
-      }
-    });
-  }, 1000); // 1 second delay
-}
-</script> -->
-
 <!-- OPSX ROOT CSS -->
 <style id="opsx-root-color-palette" data-id="root-styling">
 :root {
@@ -521,7 +487,6 @@ input[type="checkbox"]:checked {
 </style>
 
 <!-- ROOT TO REPLACE WITH OPSX ROOT -->
-
 <style id="rootvar-structural" data-id="root-styling">
 /* General Styles */
 :root {
@@ -610,7 +575,6 @@ body::before {
 </style>
 
 <!-- REGULAR CSS - TEMPLATE -->
-
 <style id="general-and-body-styles" data-id="template">
 main {
   display: flex;
