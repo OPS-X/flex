@@ -242,8 +242,36 @@ const contentConfig = {
 </script>
 
 <script id="file-include-scr">
-// Utility function to dynamically load content
+// Content loader configuration
+const contentConfig = {
+    tabs: {
+        tab1: {
+            htmlPath: 'tab1_about.html',
+            htmlTarget: '#over-ons',
+            cssPath: 'tab1_about_css.html',
+            jsPath: 'tab1_about_scr.html'
+        },
+        tab2: {
+            htmlPath: 'tab2_product.html',
+            htmlTarget: '#producten',
+            cssPath: 'tab2_product_css.html',
+            jsPath: 'tab2_product_scr.html'
+        },
+        tab3: {
+            htmlPath: 'tab3_contact.html',
+            htmlTarget: '#contact',
+            cssPath: 'tab3_contact_css.html',
+            jsPath: 'tab3_contact_scr.html'
+        }
+    },
+    misc: {
+        animations: {
+            jsPath: 'aos_animations_scr.html'
+        }
+    }
+};
 
+// Utility function to dynamically load content
 function loadContent(config) {
     const { htmlPath, htmlTarget, cssPath, jsPath } = config;
 
@@ -253,7 +281,12 @@ function loadContent(config) {
         const htmlPromise = fetch(htmlPath)
             .then(response => response.text())
             .then(data => {
-                document.querySelector(htmlTarget).innerHTML = data;
+                const targetElement = document.querySelector(htmlTarget);
+                if (targetElement) {
+                    targetElement.innerHTML = data;
+                } else {
+                    console.warn(`Target element ${htmlTarget} not found for ${htmlPath}`);
+                }
             });
         promises.push(htmlPromise);
     }
@@ -314,10 +347,22 @@ function loadConfiguredContent(config) {
     }
 }
 
-// Usage
-document.addEventListener('DOMContentLoaded', function() {
-    loadConfiguredContent(contentConfig);
-});
+// Function to initialize content loading
+function initContentLoader() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => loadConfiguredContent(contentConfig));
+    } else {
+        loadConfiguredContent(contentConfig);
+    }
+}
+
+// Expose the init function globally
+window.initContentLoader = initContentLoader;
+
+// Optional: Automatically run the init function if the script is loaded after DOM is ready
+if (document.readyState !== 'loading') {
+    initContentLoader();
+}
 </script>
 
 <!-- OPSX ROOT CSS -->
