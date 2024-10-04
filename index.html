@@ -45,47 +45,111 @@
 
 <script id="file-include-scr">
 
-// Utility function to dynamically load content
-function loadContent(config) {
-    const { htmlPath, htmlTarget, cssPath, jsPath } = config;
-
-    const promises = [];
-
-    if (htmlPath && htmlTarget) {
-        const htmlPromise = fetch(htmlPath)
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector(htmlTarget).innerHTML = data;
-            });
-        promises.push(htmlPromise);
+// Content loader configuration
+const contentConfig = {
+    tabs: {
+        tab1: {
+            htmlPath: 'tab1content.html',
+            htmlTarget: '#tab1-content',
+            cssPath: 'tab1styles.css',
+            jsPath: 'tab1script.js'
+        },
+        tab2: {
+            htmlPath: 'tab2product.html',
+            htmlTarget: '#producten',
+            cssPath: 'tab2product.css',
+            jsPath: 'tab2product.js'
+        },
+        tab3: {
+            htmlPath: 'tab3content.html',
+            htmlTarget: '#tab3-content',
+            cssPath: 'tab3styles.css',
+            jsPath: 'tab3script.js'
+        },
+        tab4: {
+            htmlPath: 'tab4content.html',
+            htmlTarget: '#tab4-content',
+            cssPath: 'tab4styles.css',
+            jsPath: 'tab4script.js'
+        },
+        tab5: {
+            htmlPath: 'tab5content.html',
+            htmlTarget: '#tab5-content',
+            cssPath: 'tab5styles.css',
+            jsPath: 'tab5script.js'
+        },
+        tab6: {
+            htmlPath: 'tab6content.html',
+            htmlTarget: '#tab6-content',
+            cssPath: 'tab6styles.css',
+            jsPath: 'tab6script.js'
+        },
+        tab7: {
+            htmlPath: 'tab7content.html',
+            htmlTarget: '#tab7-content',
+            cssPath: 'tab7styles.css',
+            jsPath: 'tab7script.js'
+        },
+        tab8: {
+            htmlPath: 'tab8content.html',
+            htmlTarget: '#tab8-content',
+            cssPath: 'tab8styles.css',
+            jsPath: 'tab8script.js'
+        },
+        tab9: {
+            htmlPath: 'tab9content.html',
+            htmlTarget: '#tab9-content',
+            cssPath: 'tab9styles.css',
+            jsPath: 'tab9script.js'
+        },
+        tab10: {
+            htmlPath: 'tab10content.html',
+            htmlTarget: '#tab10-content',
+            cssPath: 'tab10styles.css',
+            jsPath: 'tab10script.js'
+        }
+    },
+    misc: {
+        footer: {
+            htmlPath: 'footer.html',
+            htmlTarget: '#footer-container',
+            cssPath: 'footer.css',
+            jsPath: 'footer.js'
+        },
+        header: {
+            htmlPath: 'header.html',
+            htmlTarget: '#header-container',
+            cssPath: 'header.css',
+            jsPath: 'header.js'
+        },
+        sidebar: {
+            htmlPath: 'sidebar.html',
+            htmlTarget: '#sidebar-container',
+            cssPath: 'sidebar.css',
+            jsPath: 'sidebar.js'
+        }
     }
+};
 
-    if (cssPath) {
-        const cssPromise = fetch(cssPath)
-            .then(response => response.text())
-            .then(data => {
-                const style = document.createElement('style');
-                style.textContent = data;
-                document.head.appendChild(style);
-            });
-        promises.push(cssPromise);
+// Function to load content based on the configuration
+function loadConfiguredContent(config) {
+    for (const [section, sectionConfig] of Object.entries(config)) {
+        if (typeof sectionConfig === 'object' && !Array.isArray(sectionConfig)) {
+            if ('htmlPath' in sectionConfig) {
+                // If it's a direct configuration object, load it
+                loadContent(sectionConfig);
+            } else {
+                // If it's a nested object (like 'tabs' or 'misc'), recurse
+                loadConfiguredContent(sectionConfig);
+            }
+        }
     }
-
-    if (jsPath) {
-        const jsPromise = fetch(jsPath)
-            .then(response => response.text())
-            .then(data => {
-                const script = document.createElement('script');
-                script.textContent = data;
-                document.body.appendChild(script);
-            });
-        promises.push(jsPromise);
-    }
-
-    return Promise.all(promises);
 }
 
-
+// Usage
+document.addEventListener('DOMContentLoaded', function() {
+    loadConfiguredContent(contentConfig);
+});
 
 </script>
 
