@@ -43,6 +43,20 @@
 <!-- font -->
 <link href="https://fonts.googleapis.com/css2?family=Abel&amp;display=swap" rel="stylesheet">
 
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    fetch('tab2product.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('producten').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading tab2product.html:', error));
+  });
+  </script>
+
+
 <script id="smooth-collapse-scr" data-id="root-styling">
 function sectionCollapse(sectionId) {
   const allSections = document.getElementsByTagName('section');
