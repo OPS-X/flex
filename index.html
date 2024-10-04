@@ -1390,7 +1390,310 @@ div#opsx-dynamic-font-loader-container {
 
 }
 </style>
-
+<style id="tab1-about-us" data-id="about">
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+  
+  div#tab4-container-wrap {
+      DISPLAY: FLEX;
+      FLEX-DIRECTION: COLUMN;
+      FLEX: 1;
+      HEIGHT: 100%;
+      margin: auto;
+  }
+  
+  #over-ons {
+      background-color: #000;
+      color: #e0e0e0;
+      font-family: var(--font-base);
+      position: relative;
+      overflow: VISIBLE;
+      height: 100%;
+      z-index: 1;
+      overflow-x: clip;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+  }
+  
+  .strategy-container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      flex: 1;
+      gap: 15px;
+      max-width: 1200px;
+      z-index: 2;
+      
+  }
+  
+  .title-container {
+      text-align: center;
+      position: relative;
+  }
+  
+  .section-title {
+      font-size: var(--title-font-size);
+      color: #fff;
+      text-align: center;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: whitesmoke;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-top: 0;
+  }
+  
+  .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #4CAF50, transparent);
+  }
+  
+  
+  
+  .section-subtitle {
+      color: #aee0b0;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 1rem;
+      font-size: var(--title-sub-font-size);
+  }
+  
+  .strategy-Flex-G {
+      text-align: center;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  .strategy-intro p {
+      text-align: justify;
+      text-transform: uppercase;
+      padding-left: 10px;
+      padding-right: 10px;
+  }
+  
+  .timeline-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 25px;
+  }
+  
+  .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+  }
+  
+  .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #4CAF50;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      box-shadow: 0 0 15px #4CAF50;
+      z-index: -1;
+  }
+  
+  .timeline-item {
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+      margin-bottom: 20px;
+  }
+  
+  .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      right: -8px;
+      background-color: #4CAF50;
+      border: 4px solid #8BC34A;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+      box-shadow: 0 0 15px #4CAF50;
+  }
+  
+  .left {
+      left: 0;
+  }
+  
+  .right {
+      left: 50%;
+  }
+  
+  .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 13px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid #4CAF50;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent #4CAF50;
+  }
+  
+  .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 13px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid #4CAF50;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent #4CAF50 transparent transparent;
+  }
+  
+  .right::after {
+      left: -8px;
+  }
+  
+  .timeline-content {
+      padding: 20px 30px;
+      background-color: rgba(255, 255, 255, 0.05);
+      position: relative;
+      border-radius: 6px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      margin: 20px;
+  }
+  
+  .timeline-content:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(76, 175, 80, 0.3);
+  }
+  
+  .pillar {
+      background: transparent;
+      border-radius: 10px;
+      overflow: hidden;
+  }
+  
+  .pillar-image {
+      height: 200px;
+      overflow: hidden;
+  }
+  
+  .pillar-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+  }
+  
+  .timeline-content:hover .pillar-image img {
+      transform: scale(1.1);
+  }
+  
+  .pillar-content {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .pillar h3 {
+      color: #fff;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+  }
+  
+  .pillar h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50px;
+      height: 2px;
+      background: linear-gradient(to right, #4CAF50, #8BC34A);
+  }
+  
+  .pillar p {
+      line-height: 1.6;
+      text-align: justify;
+  }
+  
+  .learn-more {
+      background: linear-gradient(to right, #374138, #777777);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+  }
+  
+  .learn-more:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
+  }
+  
+  .vision-statement {
+      background: linear-gradient(45deg, rgba(76, 175, 80, 0.1) 0%, rgba(139, 195, 74, 0.1) 100%);
+      padding: 2rem;
+      border-radius: 10px;
+      text-align: justify;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      font-size: large;
+  }
+  
+  .vision-statement:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(76, 175, 80, 0.2);
+  }
+  
+  .vision-statement h3 {
+      color: #fff;
+      position: relative;
+      display: inline-block;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+  }
+  
+  .vision-statement h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, #4CAF50, #8BC34A);
+  }
+  
+  .vision-statement p {
+      line-height: 1.6;
+  }
+  
+  .timeline-nav div {
+      width: 72px;
+      font-weight: bold;
+      font-family: roboto;
+      align-items: center;
+      display: flex;
+  }
+  </style>
 <style id="tab1-about-us-media" data-id="about">
   @media screen and (max-width: 600px) {
       .timeline-nav {
