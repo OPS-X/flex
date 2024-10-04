@@ -2470,57 +2470,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script id="aos_animations_scr">
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize AOS
-    AOS.init({ duration: 1000, once: true, offset: 100 });
 
-    // Typewriter effect function
-    function typeWriter(element, text, speed = 30) {
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                if (text.charAt(i) === '<') {
-                    let endIndex = text.indexOf('>', i);
-                    if (endIndex !== -1) {
-                        element.innerHTML += text.substring(i, endIndex + 1);
-                        i = endIndex + 1;
-                    }
-                } else {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                }
-                setTimeout(type, speed);
-            }
-        }
-        type();
-    }
-
-    // Apply typewriter effect to elements
-    const title = "Elevating Cannabis Cultivation to New Heights";
-    const content = "With FlexGrow, you're not just investing in containers; you're accessing a comprehensive ecosystem designed for unparalleled success in cannabis cultivation. Our integration of AI, blockchain, and cutting-edge agritech creates a symbiotic environment where your success is our success. Join us in redefining what's possible in cannabis cultivation, where data-driven insights meet unmatched industry expertise.";
-
-    const titleElement = document.querySelector('.vision-statement h3.typewriter');
-    const contentElement = document.querySelector('.vision-statement p.typewriter');
-
-    // Start typewriter effect when elements are in view
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                if (entry.target === titleElement) {
-                    typeWriter(titleElement, title);
-                } else if (entry.target === contentElement) {
-                    typeWriter(contentElement, content);
-                }
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    observer.observe(titleElement);
-    observer.observe(contentElement);
-});
-</script>
 
 
 <script id="hamburger-menu-script" data-id="header">
