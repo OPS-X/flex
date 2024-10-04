@@ -24,6 +24,171 @@
 <meta property="twitter:description" content="{{OG_DESCRIPTION}}">
 <meta property="twitter:image" content="https://www.flex-grow.com/twitter-image.jpg">
 
+<style id="opsx-root-border-util-classes">
+  /* Border width for all sides */
+  .b1 {
+    border: 1px solid;
+  }
+  
+  .b2 {
+    border: 2px solid;
+  }
+  
+  .b4 {
+    border: 4px solid;
+  }
+  
+  /* Individual border sides */
+  .bt1 {
+    border-top: 1px solid;
+  }
+  
+  .bt2 {
+    border-top: 2px solid;
+  }
+  
+  .bt4 {
+    border-top: 4px solid;
+  }
+  
+  .br1 {
+    border-right: 1px solid;
+  }
+  
+  .br2 {
+    border-right: 2px solid;
+  }
+  
+  .br4 {
+    border-right: 4px solid;
+  }
+  
+  .bb1 {
+    border-bottom: 1px solid;
+  }
+  
+  .bb2 {
+    border-bottom: 2px solid;
+  }
+  
+  .bb4 {
+    border-bottom: 4px solid;
+  }
+  
+  .bl1 {
+    border-left: 1px solid;
+  }
+  
+  .bl2 {
+    border-left: 2px solid;
+  }
+  
+  .bl4 {
+    border-left: 4px solid;
+  }
+  
+  /* Border styles */
+  .bs {
+    border-style: solid;
+  }
+  
+  .bd {
+    border-style: dashed;
+  }
+  
+  .bdo {
+    border-style: dotted;
+  }
+  
+  .bri {
+    border-style: ridge;
+  }
+  
+  /* Individual corner border radius */
+  .btrra1 {
+    border-top-right-radius: 1px;
+  }
+  
+  .btrra2 {
+    border-top-right-radius: 2px;
+  }
+  
+  .btrra4 {
+    border-top-right-radius: 4px;
+  }
+  
+  .btrra8 {
+    border-top-right-radius: 8px;
+  }
+  
+  .bbrra1 {
+    border-bottom-right-radius: 1px;
+  }
+  
+  .bbrra2 {
+    border-bottom-right-radius: 2px;
+  }
+  
+  .bbrra4 {
+    border-bottom-right-radius: 4px;
+  }
+  
+  .bbrra8 {
+    border-bottom-right-radius: 8px;
+  }
+  
+  .bblra1 {
+    border-bottom-left-radius: 1px;
+  }
+  
+  .bblra2 {
+    border-bottom-left-radius: 2px;
+  }
+  
+  .bblra4 {
+    border-bottom-left-radius: 4px;
+  }
+  
+  .bblra8 {
+    border-bottom-left-radius: 8px;
+  }
+  
+  .btlra1 {
+    border-top-left-radius: 1px;
+  }
+  
+  .btlra2 {
+    border-top-left-radius: 2px;
+  }
+  
+  .btlra4 {
+    border-top-left-radius: 4px;
+  }
+  
+  .btlra8 {
+    border-top-left-radius: 8px;
+  }
+  
+  /* Border radius for all corners */
+  .bra1 {
+    border-radius: 1px;
+  }
+  
+  .bra2 {
+    border-radius: 2px;
+  }
+  
+  .bra4 {
+    border-radius: 4px;
+  }
+  
+  .bra8 {
+    border-radius: 8px;
+  }
+  
+  
+  </style>
+
 <script src="https://storage.googleapis.com/ops_x/libraries/code_utility/firebase/firebase_opsx.js" type="module"></script>
 
 <!-- Existing styles and scripts -->
@@ -210,170 +375,7 @@ document.addEventListener('DOMContentLoaded', function() {
     loadConfiguredContent(contentConfig);
 });
 </script>
-<style id="opsx-root-border-util-classes">
-  /* Border width for all sides */
-  .b1 {
-    border: 1px solid;
-  }
-  
-  .b2 {
-    border: 2px solid;
-  }
-  
-  .b4 {
-    border: 4px solid;
-  }
-  
-  /* Individual border sides */
-  .bt1 {
-    border-top: 1px solid;
-  }
-  
-  .bt2 {
-    border-top: 2px solid;
-  }
-  
-  .bt4 {
-    border-top: 4px solid;
-  }
-  
-  .br1 {
-    border-right: 1px solid;
-  }
-  
-  .br2 {
-    border-right: 2px solid;
-  }
-  
-  .br4 {
-    border-right: 4px solid;
-  }
-  
-  .bb1 {
-    border-bottom: 1px solid;
-  }
-  
-  .bb2 {
-    border-bottom: 2px solid;
-  }
-  
-  .bb4 {
-    border-bottom: 4px solid;
-  }
-  
-  .bl1 {
-    border-left: 1px solid;
-  }
-  
-  .bl2 {
-    border-left: 2px solid;
-  }
-  
-  .bl4 {
-    border-left: 4px solid;
-  }
-  
-  /* Border styles */
-  .bs {
-    border-style: solid;
-  }
-  
-  .bd {
-    border-style: dashed;
-  }
-  
-  .bdo {
-    border-style: dotted;
-  }
-  
-  .bri {
-    border-style: ridge;
-  }
-  
-  /* Individual corner border radius */
-  .btrra1 {
-    border-top-right-radius: 1px;
-  }
-  
-  .btrra2 {
-    border-top-right-radius: 2px;
-  }
-  
-  .btrra4 {
-    border-top-right-radius: 4px;
-  }
-  
-  .btrra8 {
-    border-top-right-radius: 8px;
-  }
-  
-  .bbrra1 {
-    border-bottom-right-radius: 1px;
-  }
-  
-  .bbrra2 {
-    border-bottom-right-radius: 2px;
-  }
-  
-  .bbrra4 {
-    border-bottom-right-radius: 4px;
-  }
-  
-  .bbrra8 {
-    border-bottom-right-radius: 8px;
-  }
-  
-  .bblra1 {
-    border-bottom-left-radius: 1px;
-  }
-  
-  .bblra2 {
-    border-bottom-left-radius: 2px;
-  }
-  
-  .bblra4 {
-    border-bottom-left-radius: 4px;
-  }
-  
-  .bblra8 {
-    border-bottom-left-radius: 8px;
-  }
-  
-  .btlra1 {
-    border-top-left-radius: 1px;
-  }
-  
-  .btlra2 {
-    border-top-left-radius: 2px;
-  }
-  
-  .btlra4 {
-    border-top-left-radius: 4px;
-  }
-  
-  .btlra8 {
-    border-top-left-radius: 8px;
-  }
-  
-  /* Border radius for all corners */
-  .bra1 {
-    border-radius: 1px;
-  }
-  
-  .bra2 {
-    border-radius: 2px;
-  }
-  
-  .bra4 {
-    border-radius: 4px;
-  }
-  
-  .bra8 {
-    border-radius: 8px;
-  }
-  
-  
-  </style>
+
   <!-- OPSX ROOT UTILITIES CSS -->
   <style id="root/04_root_container_layout_util_da_002">
     :root {}
